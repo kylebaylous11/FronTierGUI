@@ -9,49 +9,22 @@ Window::Window()
 
     QHBoxLayout *first = new QHBoxLayout;
     QLabel *XB1 = new QLabel("Enter X Bounds:");
-    QSpinBox *spinner1 = new QSpinBox;
-    QSpinBox *spinner2 = new QSpinBox;
-    spinner1->setRange(1,20);
-    spinner2->setRange(1,20);
+    QLineEdit *firstxbound = new QLineEdit;
+    QLineEdit *lastxbound = new QLineEdit;
 
     first->addWidget(XB1);
-    first->addWidget(spinner1);
-    first->addWidget(spinner2);
-
-    QHBoxLayout *second = new QHBoxLayout;
-    QLabel *YB1 = new QLabel("Enter Y Bounds:");
-    QSpinBox *spinner3 = new QSpinBox;
-    QSpinBox *spinner4 = new QSpinBox;
-    spinner3->setRange(1,20);
-    spinner4->setRange(1,20);
-
-    second->addWidget(YB1);
-    second->addWidget(spinner3);
-    second->addWidget(spinner4);
-
-    QHBoxLayout *third = new QHBoxLayout;
-    QLabel *XB2 = new QLabel("Enter X Bounds:");
-    QSpinBox *spinner5 = new QSpinBox;
-    QSpinBox *spinner6 = new QSpinBox;
-    spinner5->setRange(1,20);
-    spinner6->setRange(1,20);
-
-    third->addWidget(XB2);
-    third->addWidget(spinner5);
-    third->addWidget(spinner6);
+    first->addWidget(firstxbound);
+    first->addWidget(lastxbound);
 
     QHBoxLayout *fourth = new QHBoxLayout;
     QLabel *YB2 = new QLabel("Enter Y Bounds:");
-    QSpinBox *spinner7 = new QSpinBox;
-    QSpinBox *spinner8 = new QSpinBox;
-    spinner7->setRange(1,20);
-    spinner8->setRange(1,20);
+    QLineEdit *firstybound = new QLineEdit;
+    QLineEdit *lastybound = new QLineEdit;
 
     fourth->addWidget(YB2);
-    fourth->addWidget(spinner7);
-    fourth->addWidget(spinner8);
+    fourth->addWidget(firstybound);
+    fourth->addWidget(lastybound);
 
-    //TODO: TRY QLINEEDIT TO FILL IN COORDINATE GRID PARAMETERS
     QHBoxLayout *fifth = new QHBoxLayout;
     QLabel *Coord = new QLabel("Enter Coordinate Grid:");
     QSpinBox *spinner9 = new QSpinBox;
@@ -177,9 +150,7 @@ Window::Window()
 
     vert1->addWidget(D1);
     vert1->addLayout(first);
-    vert1->addLayout(second);
     vert1->addWidget(D2);
-    vert1->addLayout(third);
     vert1->addLayout(fourth);
     vert1->addLayout(fifth);
     QVBoxLayout *vert2 = new QVBoxLayout;
