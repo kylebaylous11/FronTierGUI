@@ -9,7 +9,7 @@ Window::Window()
 
     QHBoxLayout *first = new QHBoxLayout;
     QLabel *XB1 = new QLabel("Enter X Bounds:");
-    QLineEdit *firstxbound = new QLineEdit;
+    firstxbound = new QLineEdit;
     QLineEdit *lastxbound = new QLineEdit;
 
     first->addWidget(XB1);
@@ -146,7 +146,8 @@ Window::Window()
     QPushButton *okbutton = new QPushButton("OK");
 
     QObject::connect(quitbutton,SIGNAL(clicked()), qApp, SLOT(quit()));
-    QObject::connect(okbutton,SIGNAL(clicked()), qApp, SLOT(quit()));
+    //QObject::connect(okbutton,SIGNAL(clicked()), qApp, SLOT(quit()));
+    QObject::connect(okbutton,SIGNAL(clicked()), this, SLOT(WriteFile()));
 
     vert1->addWidget(D1);
     vert1->addLayout(first);
