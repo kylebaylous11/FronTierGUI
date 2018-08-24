@@ -10,7 +10,7 @@ Window::Window()
     QHBoxLayout *first = new QHBoxLayout;
     QLabel *XB1 = new QLabel("Enter X Bounds:");
     firstxbound = new QLineEdit;
-    QLineEdit *lastxbound = new QLineEdit;
+    lastxbound = new QLineEdit;
 
     first->addWidget(XB1);
     first->addWidget(firstxbound);
@@ -18,27 +18,25 @@ Window::Window()
 
     QHBoxLayout *fourth = new QHBoxLayout;
     QLabel *YB2 = new QLabel("Enter Y Bounds:");
-    QLineEdit *firstybound = new QLineEdit;
-    QLineEdit *lastybound = new QLineEdit;
+    firstybound = new QLineEdit;
+    lastybound = new QLineEdit;
 
     fourth->addWidget(YB2);
     fourth->addWidget(firstybound);
     fourth->addWidget(lastybound);
 
     QHBoxLayout *fifth = new QHBoxLayout;
-    QLabel *Coord = new QLabel("Enter Coordinate Grid:");
-    QSpinBox *spinner9 = new QSpinBox;
-    QSpinBox *spinner10 = new QSpinBox;
-    spinner9->setRange(1,20);
-    spinner10->setRange(1,20);
+    QLabel *Coord = new QLabel("Enter Computational Grid:");
+    firstcoordinate = new QLineEdit;
+    lastcoordinate = new QLineEdit;
 
     fifth->addWidget(Coord);
-    fifth->addWidget(spinner9);
-    fifth->addWidget(spinner10);
+    fifth->addWidget(firstcoordinate);
+    fifth->addWidget(lastcoordinate);
 
     QLabel *ZL = new QLabel("Lower Boundary in 0th Dimension:");
 
-    QComboBox *zerolower = new QComboBox;
+    zerolower = new QComboBox;
     zerolower->addItem("PERIODIC_BOUNDARY");
     zerolower->addItem("NEUMANN_BOUNDARY");
 
@@ -48,7 +46,7 @@ Window::Window()
 
     QLabel *ZU = new QLabel("Upper Boundary in 0th Dimension:");
 
-    QComboBox *zeroupper = new QComboBox;
+    zeroupper = new QComboBox;
     zeroupper->addItem("PERIODIC_BOUNDARY");
     zeroupper->addItem("NEUMANN_BOUNDARY");
 
@@ -58,7 +56,7 @@ Window::Window()
 
     QLabel *OL = new QLabel("Lower Boundary in 1st Dimension:");
 
-    QComboBox *onelower = new QComboBox;
+    onelower = new QComboBox;
     onelower->addItem("PERIODIC_BOUNDARY");
     onelower->addItem("NEUMANN_BOUNDARY");
 
@@ -68,7 +66,7 @@ Window::Window()
 
     QLabel *OU = new QLabel("Upper Boundary in 1st Dimension:");
 
-    QComboBox *oneupper = new QComboBox;
+    oneupper = new QComboBox;
     oneupper->addItem("PERIODIC_BOUNDARY");
     oneupper->addItem("NEUMANN_BOUNDARY");
 
@@ -78,49 +76,49 @@ Window::Window()
 
     QHBoxLayout *sixth = new QHBoxLayout;
     QLabel *maxtime = new QLabel("Enter max time:");
-    QLineEdit *line1 = new QLineEdit;
+    line1 = new QLineEdit;
 
     sixth->addWidget(maxtime);
     sixth->addWidget(line1);
 
     QHBoxLayout *seventh = new QHBoxLayout;
     QLabel *maxstep = new QLabel("Enter max step:");
-    QLineEdit *line2 = new QLineEdit;
+    line2 = new QLineEdit;
 
     seventh->addWidget(maxstep);
     seventh->addWidget(line2);
 
     QHBoxLayout *eighth = new QHBoxLayout;
     QLabel *printinterval = new QLabel("Print interval:");
-    QLineEdit *line3 = new QLineEdit;
+    line3 = new QLineEdit;
 
     eighth->addWidget(printinterval);
     eighth->addWidget(line3);
 
     QHBoxLayout *ninth = new QHBoxLayout;
     QLabel *movie = new QLabel("Movie frame interval:");
-    QLineEdit *line4 = new QLineEdit;
+    line4 = new QLineEdit;
 
     ninth->addWidget(movie);
     ninth->addWidget(line4);
 
     QHBoxLayout *tenth = new QHBoxLayout;
     QLabel *CFL = new QLabel("CFL factor:");
-    QLineEdit *line5 = new QLineEdit;
+    line5 = new QLineEdit;
 
     tenth->addWidget(CFL);
     tenth->addWidget(line5);
 
     QHBoxLayout *eleventh = new QHBoxLayout;
     QLabel *redinterval = new QLabel("Redistribution interval:");
-    QLineEdit *line6 = new QLineEdit;
+    line6 = new QLineEdit;
 
     eleventh->addWidget(redinterval);
     eleventh->addWidget(line6);
 
     QHBoxLayout *twelfth = new QHBoxLayout;
     QLabel *ptype = new QLabel("Enter the problem type:");
-    QComboBox *probtype = new QComboBox;
+    probtype = new QComboBox;
     probtype->addItem("TWO_FLUID_BUBBLE");
     probtype->addItem("TWO_FLUID_RT");
     probtype->addItem("TWO_FLUID_KH");
@@ -131,7 +129,7 @@ Window::Window()
 
     QHBoxLayout *thirteenth = new QHBoxLayout;
     QLabel *proj_type = new QLabel("Enter the projection type:");
-    QComboBox *projectiontype = new QComboBox;
+    projectiontype = new QComboBox;
     projectiontype->addItem("SIMPLE");
     projectiontype->addItem("BELL_COLELLA");
     projectiontype->addItem("KIM_MOIN");
