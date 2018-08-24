@@ -40,6 +40,21 @@ private:
     QLineEdit *line6;
     QComboBox *probtype;
     QComboBox *projectiontype;
+    QLineEdit *line7;
+    QLineEdit *line8;
+    QLineEdit *line9;
+    QLineEdit *line10;
+    QLineEdit *line11;
+    QLineEdit *den1;
+    QLineEdit *vis1;
+    QLineEdit *den2;
+    QLineEdit *vis2;
+    QLineEdit *grav1;
+    QLineEdit *grav2;
+    QLineEdit *line12;
+    QLineEdit *line13;
+
+
 
 
 public:
@@ -57,7 +72,9 @@ private slots:
 
     void WriteFile()
     {
-        QFile GUItext("/Users/Kyle/FronTierGUI/FronTierGUI/GUI.txt");
+        //QFile GUItext("/Users/Kyle/FronTierGUI/FronTierGUI/GUI.txt"); //kyle's mac
+        QFile GUItext("./GUI.txt"); //lambda
+
         if (!GUItext.open(QIODevice::WriteOnly | QIODevice::Text))
         {
             qDebug() << "Could not open GUI.txt\n";
@@ -100,6 +117,32 @@ private slots:
 
         QString projection_type = projectiontype->currentText();
 
+        QString mean_position = line7->displayText();
+
+        QString sine_modes = line8->displayText();
+
+        QString mode_frequency = line9->displayText();
+
+        QString mode_amplitude = line10->displayText();
+
+        QString mode_phase = line11->displayText();
+
+        QString density_1 = den1->displayText();
+
+        QString viscosity_1 = vis1->displayText();
+
+        QString density_2 = den2->displayText();
+
+        QString viscosity_2 = vis2->displayText();
+
+        QString gravity_1 = grav1->displayText();
+
+        QString gravity_2 = grav2->displayText();
+
+        QString surface_tension = line12->displayText();
+
+        QString smoothing_radius = line13->displayText();
+
 
 
         //Output all
@@ -139,11 +182,28 @@ private slots:
 
         out << "Projection type: " << projection_type << "\n";
 
+        out << "Mean position of fluid interface: " << mean_position << "\n";
+
+        out << "Number of sine modes: " << sine_modes << "\n";
+
+        out << "Frequency of mode 1: " << mode_frequency << "\n";
+
+        out << "Amplitude of mode 1: " << mode_amplitude << "\n";
+
+        out << "Phase of mode 1: " << mode_phase << "\n";
+
+        out << "Density and viscosity of fluid 1: " << density_1 << " " << viscosity_1 << "\n";
+
+        out << "Density and viscosity of fluid 2: " << density_2 << " " << viscosity_2 << "\n";
+
+        out << "Gravity: " << gravity_1 << " " << gravity_2 << "\n";
+
+        out << "Surface tension: " << surface_tension << "\n";
+
+        out << "Factor of smoothing radius: " << smoothing_radius << "\n";
 
 
-
-
-        //Tried to open the file on the spot vut doesnt format well
+         //Tried to open the file on the spot vut doesnt format well
         /*QTextBrowser *inputfile = new QTextBrowser;
             inputfile->setText(GUItext.readAll());
             inputfile->show();*/

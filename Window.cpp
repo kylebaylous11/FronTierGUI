@@ -138,8 +138,85 @@ Window::Window()
     thirteenth->addWidget(proj_type);
     thirteenth->addWidget(projectiontype);
 
+    QHBoxLayout *fourteenth = new QHBoxLayout;
+    QLabel *meanpos = new QLabel("Enter mean position of fluid interface:");
+    line7 = new QLineEdit;
+
+    fourteenth->addWidget(meanpos);
+    fourteenth->addWidget(line7);
+
+    QHBoxLayout *fifteenth = new QHBoxLayout;
+    QLabel *sinemodes = new QLabel("Enter number of sine modes:");
+    line8 = new QLineEdit;
+
+    fifteenth->addWidget(sinemodes);
+    fifteenth->addWidget(line8);
+
+    QHBoxLayout *sixteenth = new QHBoxLayout;
+    QLabel *freq = new QLabel("Enter frequency of mode 1:");
+    line9 = new QLineEdit;
+
+    sixteenth->addWidget(freq);
+    sixteenth->addWidget(line9);
+
+    QHBoxLayout *seventeenth = new QHBoxLayout;
+    QLabel *amp = new QLabel("Ente amplitude of mode 1:");
+    line10 = new QLineEdit;
+
+    seventeenth->addWidget(amp);
+    seventeenth->addWidget(line10);
+
+    QHBoxLayout *eighteenth = new QHBoxLayout;
+    QLabel *phase = new QLabel("Enter phase of mode 1:");
+    line11 = new QLineEdit;
+
+    eighteenth->addWidget(phase);
+    eighteenth->addWidget(line11);
+
+    QHBoxLayout *nineteenth = new QHBoxLayout;
+    QLabel *dandv1 = new QLabel("Enter density and viscosity of fluid 1:");
+    den1 = new QLineEdit;
+    vis1 = new QLineEdit;
+
+    nineteenth->addWidget(dandv1);
+    nineteenth->addWidget(den1);
+    nineteenth->addWidget(vis1);
+
+    QHBoxLayout *twenty = new QHBoxLayout;
+    QLabel *dandv2 = new QLabel("Enter density and viscosity of fluid 2:");
+    den2 = new QLineEdit;
+    vis2 = new QLineEdit;
+
+    twenty->addWidget(dandv2);
+    twenty->addWidget(den2);
+    twenty->addWidget(vis2);
+
+    QHBoxLayout *twentyone = new QHBoxLayout;
+    QLabel *gravity = new QLabel("Enter gravity:");
+    grav1 = new QLineEdit;
+    grav2 = new QLineEdit;
+
+    twentyone->addWidget(gravity);
+    twentyone->addWidget(grav1);
+    twentyone->addWidget(grav2);
+
+    QHBoxLayout *twentytwo = new QHBoxLayout;
+    QLabel *surftension = new QLabel("Enter surface tension:");
+    line12 = new QLineEdit;
+
+    twentytwo->addWidget(surftension);
+    twentytwo->addWidget(line12);
+
+    QHBoxLayout *twentythree = new QHBoxLayout;
+    QLabel *smoothrad = new QLabel("Enter factor of smoothing radius:");
+    line13 = new QLineEdit;
+
+    twentythree->addWidget(smoothrad);
+    twentythree->addWidget(line13);
+
+
     //main layout with vertical alignment
-    QVBoxLayout *vert1 = new QVBoxLayout;
+
     QPushButton *quitbutton = new QPushButton("Quit");
     QPushButton *okbutton = new QPushButton("OK");
 
@@ -147,16 +224,19 @@ Window::Window()
     //QObject::connect(okbutton,SIGNAL(clicked()), qApp, SLOT(quit()));
     QObject::connect(okbutton,SIGNAL(clicked()), this, SLOT(WriteFile()));
 
+    QVBoxLayout *vert1 = new QVBoxLayout;
     vert1->addWidget(D1);
     vert1->addLayout(first);
     vert1->addWidget(D2);
     vert1->addLayout(fourth);
     vert1->addLayout(fifth);
+
     QVBoxLayout *vert2 = new QVBoxLayout;
     vert2->addLayout(zerolowerbox);
     vert2->addLayout(zeroupperbox);
     vert2->addLayout(onelowerbox);
     vert2->addLayout(oneupperbox);
+
     QVBoxLayout *vert3 = new QVBoxLayout;
     vert3->addLayout(sixth);
     vert3->addLayout(seventh);
@@ -164,19 +244,38 @@ Window::Window()
     vert3->addLayout(ninth);
     vert3->addLayout(tenth);
     vert3->addLayout(eleventh);
+
     QVBoxLayout *vert4 = new QVBoxLayout;
     vert4->addLayout(twelfth);
     vert4->addLayout(thirteenth);
+
     QVBoxLayout *vert5 = new QVBoxLayout;
     vert5->addWidget(quitbutton);
     vert5->addWidget(okbutton);
+
+    QVBoxLayout *vert6 = new QVBoxLayout;
+    vert6->addLayout(fourteenth);
+    vert6->addLayout(fifteenth);
+    vert6->addLayout(sixteenth);
+    vert6->addLayout(seventeenth);
+    vert6->addLayout(eighteenth);
+
+    QVBoxLayout *vert7 = new QVBoxLayout;
+    vert7->addLayout(nineteenth);
+    vert7->addLayout(twenty);
+    vert7->addLayout(twentyone);
+    vert7->addLayout(twentytwo);
+    vert7->addLayout(twentythree);
 
     QGridLayout *grid = new QGridLayout;
     grid->addLayout(vert1,0,0);
     grid->addLayout(vert2,1,0);
     grid->addLayout(vert3,0,2);
     grid->addLayout(vert4,1,2);
-    grid->addLayout(vert5,2,1);
+    grid->addLayout(vert5,4,1);
+    grid->addLayout(vert6,3,0);
+    grid->addLayout(vert7,3,2);
+
 
     this->setLayout(grid);
 
